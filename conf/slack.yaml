@@ -1,0 +1,16 @@
+AdminUsers: [ "jpr9c" ]
+ProtocolConfig:
+  MaxMessageSplit: {{ env "GOPHER_SLACK_MAX_MSGS" | default "2" }}
+  SlackToken: xoxb-{{ decrypt "AQJYyw+Xifhjf7a0XYDH1mksZ2YMIUwhNUzaxT/RhPFOTmxPjP1ycNNKy9cUq1Drbru7ZzQOAfXxBy1y1bUsFf9JEqnQ/TsYxUpaYeIF" }}
+
+DefaultChannels: [ "general", "random" ]
+
+UserRoster:
+  - UserName: jpr9c
+    UserID: U4W9APL7K
+  # - UserName: floyd
+  #   UserID: U138KTVCL
+  #   BotUser: true
+        
+{{ $defaultjobchannel := "robots" }}
+DefaultJobChannel: {{ env "GOPHER_JOBCHANNEL" | default $defaultjobchannel }}
